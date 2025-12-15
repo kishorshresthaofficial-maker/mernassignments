@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    
+    <style>
+        *
+        {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body{
+            background-color: #b8b8b8;
+            height: 100vh;
+            width: 100vw;
+            display: grid;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .container
+        {
+            width: 320px;
+            height: 570px;
+            background-color: #000;
+            color: #fff;
+            border-radius: 15px;
+            border: none;
+            /* padding: 5px; */
+        }
+
+        .screen
+        {
+            color: #fff;
+            text-align: right;
+            padding: 120px 10px 0 0;
+            height: 200px;
+            /* background-color: rgb(155, 157, 157); */
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+        }        
+
+        .result
+        {
+            padding-top: 20px;
+        }
+
+        .calculate
+        {
+            margin: 0 0 -10px 0;
+        }
+
+        .result span.output
+        {
+            font-size: 36px;
+        }
+
+        .number{
+            color: #fff;
+            background: #9c9b9b;
+        }
+
+    .buttonpad
+    {
+        padding: 10px 10px;
+        padding-bottom: 0;
+        display: grid;
+        grid-template-columns: 23% 23% 23% 23%;
+        gap: 2px;
+        justify-content: space-between;
+        align-items: center;
+        border-top: 1px solid #f1b75b;
+    }
+
+    button{
+        height: 63px;
+        width: 63px;
+        border-radius: 50%;
+        border: none;
+        font-size: 16px;
+        cursor: pointer;
+    }
+
+    .highlight
+    {
+        background-color: #FF9F09;
+        color: #fff;
+    }
+
+    </style>
+</head>
+<body>
+        <div class="container">
+                <div class="screen">
+                        <div class="calculate">
+                            <span id="calculation"></span>
+                            <!-- <input type="number" class="calculation"> -->
+                        </div>
+
+                        <div class="result">
+                            <span id="output"></span>
+                            <!-- <input type="number" class="output"> -->
+                        </div>
+                </div>
+
+                <div class="buttonpad">
+                    <button class="number">DEL</button>
+                    <button class="number">AC</button>
+                    <button class="number">%</button>
+                    <button class="highlight">/</button>
+                    <button class="number">7</button>
+                    <button class="number">8</button>
+                    <button class="number">9</button>
+                    <button class="highlight">X</button>
+                    <button class="number">4</button>
+                    <button class="number">5</button>
+                    <button class="number">6</button>
+
+                    <button class="highlight">-</button>
+                    <button class="number">1</button>
+                    <button class="number">2</button>
+                    <button class="number">3</button>
+                    <button class="highlight">+</button>
+
+
+                    <button class="number">+/-</button>
+                    <button class="number">0</button>
+                    <button class="number">.</button>
+                    <button class="highlight">=</button>
+                </div>
+        </div>
+
+        <script>
+
+        </script>
+</body>
+</html>
