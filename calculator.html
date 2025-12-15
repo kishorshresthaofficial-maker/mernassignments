@@ -85,6 +85,11 @@
         cursor: pointer;
     }
 
+    #output
+    {
+        font-size: 52px;
+    }
+
     .highlight
     {
         background-color: #FF9F09;
@@ -102,39 +107,67 @@
                         </div>
 
                         <div class="result">
-                            <span id="output"></span>
+                            <span id="output">0</span>
                             <!-- <input type="number" class="output"> -->
                         </div>
                 </div>
 
                 <div class="buttonpad">
                     <button class="number">DEL</button>
-                    <button class="number">AC</button>
-                    <button class="number">%</button>
-                    <button class="highlight">/</button>
-                    <button class="number">7</button>
-                    <button class="number">8</button>
-                    <button class="number">9</button>
-                    <button class="highlight">X</button>
-                    <button class="number">4</button>
-                    <button class="number">5</button>
-                    <button class="number">6</button>
+                    <button class="number" onclick="resetAll()">AC</button>
+                    <button class="number" onclick="calc('%')">%</button>
+                    <button class="highlight" onclick="calc('/')">/</button>
+                    <button class="number" onclick="calc('7')">7</button>
+                    <button class="number" onclick="calc('8')">8</button>
+                    <button class="number" onclick="calc('9')">9</button>
+                    <button class="highlight" onclick="calc('*')">X</button>
+                    <button class="number" onclick="calc('4')">4</button>
+                    <button class="number" onclick="calc('5')">5</button>
+                    <button class="number" onclick="calc('6')">6</button>
 
-                    <button class="highlight">-</button>
-                    <button class="number">1</button>
-                    <button class="number">2</button>
-                    <button class="number">3</button>
-                    <button class="highlight">+</button>
+                    <button class="highlight" onclick="calc('-')">-</button>
+                    <button class="number" onclick="calc('1')">1</button>
+                    <button class="number" onclick="calc('2')">2</button>
+                    <button class="number" onclick="calc('3')">3</button>
+                    <button class="highlight" onclick="calc('+')">+</button>
 
 
-                    <button class="number">+/-</button>
-                    <button class="number">0</button>
-                    <button class="number">.</button>
-                    <button class="highlight">=</button>
+                    <button class="number" onclick="calc('+/-')">+/-</button>
+                    <button class="number" onclick="calc('0')">0</button>
+                    <button class="number" onclick="calc('.')">.</button>
+                    <button class="highlight" onclick="getResult()">=</button>
                 </div>
         </div>
 
         <script>
+                let exp = "0"
+                const output = document.getElementById('output')
+
+                function calc(value){
+                   exp = exp === "0" ? value : exp + value
+            
+                   console.log(exp)
+                   output.innerText = exp
+                }
+
+                function resetAll()
+                {
+                    exp = "0"
+                    output.innerText = exp
+                }
+
+                function getResult()
+                {
+                    try{
+                        result = eval(exp)
+                        output.innerText = result
+                        exp = "0"
+                    }
+                    catch(error)
+                    {
+                        output.innerText = "ERROR"
+                    }
+                }
 
         </script>
 </body>
