@@ -88,6 +88,7 @@
     #output
     {
         font-size: 52px;
+        overflow: hidden;
     }
 
     .highlight
@@ -108,7 +109,6 @@
 
                         <div class="result">
                             <span id="output">0</span>
-                            <!-- <input type="number" class="output"> -->
                         </div>
                 </div>
 
@@ -141,18 +141,19 @@
 
         <script>
                 let exp = "0"
-                const output = document.getElementById('output')
+                const calculation = document.getElementById('calculation')
 
                 function calc(value){
                    exp = exp === "0" ? value : exp + value
             
                    console.log(exp)
-                   output.innerText = exp
+                   calculation.innerText = exp
                 }
 
                 function resetAll()
                 {
                     exp = "0"
+                    calculation.innerText = exp
                     output.innerText = exp
                 }
 
